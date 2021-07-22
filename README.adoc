@@ -23,3 +23,10 @@ Compilación de algunos código de Java
 
 image::cover.jpg[]
 
+
+== Conceptos que se recomiendan explorar
+
+* Maven
+* Gradle
+* Jar
+* Spring
