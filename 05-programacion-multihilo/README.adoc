@@ -1,0 +1,110 @@
+= Programación multihilo
+Creado por Rodrigo Francisco <rhodfra@gmail.com>
+Version 1.0, 16.07.2021
+:sectnums: 
+:toc: 
+:toc-placement!:
+:toclevels: 4                                          
+:toc-title: Contenido
+:imagesdir: ./README.assets/ 
+:source-highlighter: pygments
+ifndef::env-github[:icons: font]
+ifdef::env-github[]
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+
+Compilación de algunos código de Java
+
+toc::[]
+
+//Programación multihilo
+== Concepto relacionados con la programación multihilo
+
+=== Proceso
+
+* Un proceso es el nombre que se le da a la instancia de cualquier programa de
+computadora que se ejecuta por 1 o más hilos.
+
+* Un proceso se puede entender como un conjunto de recursos (del CPU y la RAM) que
+se reservaron para llevar una tarea en particular.
+
+image::htop.png[]
+
+=== Hilo
+
+* Un hilo (_thread_ en inglés), también es conocido como un proceso ligero. 
+
+* Un hilo se considera como la unidad mínima de procesamiento.
+
+Ventajas::
+* Mejor utilización de 1 solo CPU.
+* Mejora la experiencia de usuario, en el sentido que hace la aplicación más
+responsiva.
+
+[IMPORTANT]
+====
+¡¡Hoy en día no podemos programar sin utilizar hilos!!
+
+Cualquier aplicación real utiliza hilos, ya se de manera explicíta o implícita.
+
+El uso de hilos es sobre todo muy común en el desarrollo móvil.
+====
+
+=== Programación multihilo
+
+Debe entenderse como hacer programación haciendo uso de los hilos, por medio de
+un lenguaje de programación:
+
+image::multithread.svg[]
+
+.¿Quién ganará?
+* Java
+* C
+* Python
+* Ruby
+
+=== Programación en paralelo
+
+En el caso de esta forma de programar se utilizan múltiples recursos a nivel de
+procesador. En este caso se utilizan varios _cores_ o núcleos del procesador
+para ejecutar nuestro programa.
+
+image::parallel.png[]
+
+=== Programación distribuida
+
+La programación distribuida (o cómputo distribuido) se refiere ejecutar un
+sistema cuyos _componentes_ se encuentran en diferentes computadora que están
+conectadas por medio de una red de datos, en la cuál se comunican y coordina por
+medio del intercambio de mensjaes de un servidor a otro.
+
+image::distributed.gif[]
+
+== Threads (hilos) en Java
+
+image::thread.png[]
+
+En Java se pueden usar hilos por medio de:
+
+* La clase `Thread`
+* Implementando la interfaz `Runnable`
+
+//d. Clase Thread, herencia y manipulación de hilos
+//e. Métodos run y start
+//f. Interfaz Runnable      
+
+=== Diagrama de estados
+
+image::cycle.jpg[]
+
+== Sincronización de hilos
+
+image::sync.jpg[]
+
+//https://www.tutorialspoint.com/java/java_multithreading.htm
+//https://www.geeksforgeeks.org/multithreading-in-java/#:~:text=Multithreading%20is%20a%20Java%20feature,Extending%20the%20Thread%20class
+//https://www.tutorialspoint.com/java/java_thread_synchronization.htm
