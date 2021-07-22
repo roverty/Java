@@ -37,7 +37,7 @@ class ThreadDemo extends Thread {
    }
 }
 
-public class TestThread {
+public class Ejemplo04Thread {
    public static void main(String args[]) {
 
       PrintDemo PD = new PrintDemo();
