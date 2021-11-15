@@ -68,3 +68,43 @@ Compilación de algunos códigos de Java
         }
     }
     #+end_src
+- Diferencia entre =StringBuffer= y =StringBuilder=
+  + Las operaciones de =StringBuffer= son thread-safe y sincronizadas, mientras que las operaciones de =StringBuilder= NO son thread-safe.
+
+  + =StringBuffer= se suele utilizar cuando varios hilos estan trabajan sobre la misma cadena.
+
+  + El rendimiento de =StringBuilder= es mayor comparado con =StringBuffer=.
+    #+begin_src java
+    class Demo {
+        public void static main(String[] args) {
+            String str1 = new String("Hello");
+            StringBuilder builder = new StringBuilder("Hello");
+            StringBuffer buffer = new StringBuffer("Hello");
+
+            str.concat(" Hi..."); // Inmutable
+            builder.append(" Hi..."); // Mutable
+            buffer.append(" Hi..."); // Mutable
+        }
+    }
+    #+end_src
+
+- Diferencias entre =Heap= y =Stack= memory
+  [[./README.assets/heap-stack.png]]
+  #+begin_src java
+    class Point {
+        int x,y;
+        void showPoint() {
+            System.out.println("Point is: " + x + "-" + y);
+        }
+    }
+
+    public static void main(String[] args) {
+        // Construccion del objeto
+        Point p1 = new Point();
+
+        System.out.println(p1); // Point@12834
+    }
+
+  #+end_src
+
+[[./README.assets/head-stack-diagram.png]]
