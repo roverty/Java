@@ -109,3 +109,4 @@ image::sync.jpg[]
 //https://www.geeksforgeeks.org/multithreading-in-java/#:~:text=Multithreading%20is%20a%20Java%20feature,Extending%20the%20Thread%20class
 //https://www.tutorialspoint.com/java/java_thread_synchronization.htm
 //https://www.journaldev.com/1079/multithreading-in-java
+//https://dzone.com/articles/top-15-java-multithreading-concurrency-interview-q

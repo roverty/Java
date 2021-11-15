@@ -1,0 +1,70 @@
+#+TITLE: Java
+#+AUTHOR: Rodrigo Francisco
+#+DATE: 15-11-2021
+
+Compilación de algunos códigos de Java
+
+[[./README.assets/cover.jpg]]
+
+** COMMENT Concepto que se recomiendan explorar
+- Maven
+- Gradle
+- Jar
+- Spring
+
+** Java basics
+
+- Diferencia entre JDK, JRE y JVM
+  + *JVM(Java Virtual Machine)*. Es una máquina abstracta. Es una especificación que provee un ambiente en tiempo de ejecución que el /bytecode/ de Java utiliza para ejecutarse.
+  + *JRE(Java Runtime Environment)*. Es un ambiente en tiempo de ejecución que implementa JVM y provee todas las librerias y otros archivos que la JVM usa en tiempo de ejecución.
+  + *JDK(Java Development Kit)*. Es una herramienta necesaria para compilar, documentar y empaquetar programas de Java. El JDK incluye completamiente JRE.
+
+  [[./README.assets/jdk-jre-jvm.png]]
+
+- Sincronización
+  + La sincronización es un proceso que mantiene a todos los hios de ejecuación en sintonía.
+  + La sincronización evita errores de consistencia en memoria causados por la memoria compartidad entre los hilos.
+
+- Hilos vs Procesos
+
+  [[./README.assets/thread-process.png]]
+
+- Wrapper class
+  + Los 8 tipos primitivos de datos de Java tiene una clase dedicada correspondiente, las cuales llamamos /wrapper classes/ o clases envolventes, porque envuelven los tipos de datos en objetos de esa clase.
+    [[./README.assets/wrapper.png]]
+
+  + Boing vs Unboxing
+    #+begin_src java
+        int integer = 10;
+        Integer intRef = new Integer(integer) // Boxing
+        int j = intRef.intValue(); // Unboxing
+        Integer kRef = i; // Autoboxing
+        int l = kRef; // Autounboxking
+    #+end_src
+
+  + Una ventaja es que podemos pasar por referencia los tipos de datos primitivos.
+
+- Diferencia entre las palabras reservadas =final=, =finally= y =finalize fulfill=
+
+  + *Final*. Se usa para aplicar restricciones a una clase, un método o variable.
+    - Una _Clase final_ no puede heredar
+    - Un _Método final_ no se puede sobreescribir
+    - Una _Variable final_ no se le puede cambiar el valor.
+  + *Finally*. Se utiliza para poner código que se ejecutará sin importar si una excepción surge o no.
+  + *Finalize*.  Se utiliza para un proceso de limpieza justo antes del que objecto sea recolectado pro el Garbage Collector
+    #+begin_src java
+    class FinalizaExample {
+        public void finalize() throws Throwable {
+            System.out.printlin("Finalize is called");
+        }
+    }
+    class Demo {
+        public void static main(String[] args) {
+            System.out.printlin("Doing things ...");
+
+            FinalizaExample fRef = new FinalizaExample();
+            fRef = null;
+            System.gc();
+        }
+    }
+    #+end_src
