@@ -107,4 +107,97 @@ Compilación de algunos códigos de Java
 
   #+end_src
 
-[[./README.assets/head-stack-diagram.png]]
+  [[./README.assets/head-stack-diagram.png]]
+
+- Diferencia entre =ArrayList= y =Vector=
+  [[./README.assets/arraylist-vector.png]]
+
+- Diferencia entre =HashMap= y =HashTable=
+  [[./README.assets/hashmap-hashtable.png]]
+
+** Java OOP
+
+- Diferencia entre Clases abstractas e Interfaces
+  [[./README.assets/abstract-interface.png]]
+
+  #+begin_src java
+    /*
+    class Shape {
+        void draw() {
+            System.out.println("Drawing a shape");
+        }
+    }
+
+    abstract class Shape {
+        Shape() {
+            System.out.println("Shape is constructed");
+        }
+        abstract draw(); // No definition
+    }
+    ,*/
+
+    interface Shape {
+        void draw();
+    }
+
+    //class Rectangle extends Shape { // Object to Object inheritance
+    class Rectangle implements Shape { // NO Object to Object inheritance
+        void draw() { // Override (mandatory)
+            System.out.println("Drawing a Rectangle");
+        }
+    }
+
+    class Circle extends Shape {
+        void draw() {
+            System.out.println("Drawing a Circle");
+        }
+    }
+
+    class Polygon extends Shape {
+        void draw() {
+            System.out.println("Drawing a Polygon");
+        }
+    }
+
+    public class Demo {
+        public static void main(String[] args) {
+            Shape s;
+            s = new Circle(); // Polymorphic statement - UPCASTING
+            s.draw();
+        }
+    }
+  #+end_src
+
+- ¿Qué es polimorfismo?
+  Describe una interface que puede tener muchas implementaciones.
+  Es una característica que nos permite asignar diferentes significados o usos a algo en diferentes contextos.
+  [[./README.assets/polimorfismo.png]]
+
+- Diferencia entre /overloading/ y /overriding/ en métodos
+  [[./README.assets/override-overloading.png]]
+
+  Ejemplo
+
+  [[./README.assets/override-overloading-example.png]]
+
+- ¿Se puede sobreescribir un método privado o estático en Java?
+
+  #+name Test.java
+  #+begin_src java
+    class Base {
+        private static void display() { System.out.println("Static from Base"); }
+        public void print() { System.out.println("Non-static from Base"); }
+    }
+
+    clase Derived extends Base {
+        private static void display() { System.out.println("Static from Derived"); }
+        public void print() { System.out.println("Non-static from Derived"); }
+    }
+    public class Test {
+        public static void main(String[] args) {
+            Base obj1 = new Derived();
+            obj1.display();
+            obj1.print();
+        }
+    }
+  #+end_src
